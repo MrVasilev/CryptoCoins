@@ -1,0 +1,30 @@
+package com.neverland.cryptocoins.domain.model
+
+data class CoinDetails(
+    val id: String,
+    val name: String,
+    val symbol: String,
+    val rank: Int,
+    val isNew: Boolean,
+    val isActive: Boolean,
+    val type: String,
+    val contract: String,
+    val description: String,
+    val logo: String,
+    val message: String,
+    val parent: Parent,
+    val developmentStatus: String,
+    val hardwareWallet: Boolean,
+    val hashAlgorithm: String,
+    val links: Links,
+    val isOpenSource: Boolean,
+    val orgStructure: String,
+    val platform: String,
+    val proofType: String,
+    val tags: List<Tag>,
+    val team: List<TeamMember>,
+    val whitePaper: WhitePaper,
+    val startedAt: String,
+    val firstDataAt: String,
+    val lastDataAt: String
+)
