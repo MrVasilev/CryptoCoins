@@ -8,13 +8,13 @@ import javax.inject.Singleton
 @Singleton
 class CoinMapper @Inject constructor() {
 
-    fun mapToDomainModel(response: CoinResponse): Coin = Coin(
-        id = response.id.orEmpty(),
-        name = response.name.orEmpty(),
-        symbol = response.symbol.orEmpty(),
-        rank = response.rank ?: -1,
-        isNew = response.isNew ?: false,
-        isActive = response.isActive ?: false,
-        type = response.type.orEmpty()
+    fun mapToDomainModel(response: CoinResponse?): Coin = Coin(
+        id = response?.id.orEmpty(),
+        name = response?.name.orEmpty(),
+        symbol = response?.symbol.orEmpty(),
+        rank = response?.rank ?: -1,
+        isNew = response?.isNew ?: false,
+        isActive = response?.isActive ?: false,
+        type = response?.type.orEmpty()
     )
 }

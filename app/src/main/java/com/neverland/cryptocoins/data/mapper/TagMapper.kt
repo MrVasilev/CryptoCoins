@@ -8,7 +8,7 @@ import javax.inject.Singleton
 @Singleton
 class TagMapper @Inject constructor() {
 
-    fun mapToDomainModelsList(response: List<TagResponse>?): List<Tag> =
+    fun mapToDomainModelList(response: List<TagResponse>?): List<Tag> =
         response?.map { mapToDomainModel(it) } ?: emptyList()
 
     private fun mapToDomainModel(response: TagResponse?): Tag = Tag(

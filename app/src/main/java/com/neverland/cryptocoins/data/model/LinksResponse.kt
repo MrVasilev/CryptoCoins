@@ -11,9 +11,6 @@ data class LinksResponse(
     @Json(name = "facebook")
     val facebook: List<String>? = null,
 
-    @Json(name = "medium")
-    val medium: Any? = null,
-
     @Json(name = "reddit")
     val reddit: List<String>? = null,
 

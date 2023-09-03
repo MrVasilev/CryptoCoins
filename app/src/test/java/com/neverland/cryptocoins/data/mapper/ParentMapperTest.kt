@@ -1,21 +1,21 @@
 package com.neverland.cryptocoins.data.mapper
 
-import com.neverland.cryptocoins.data.model.WhitePaperResponse
-import com.neverland.cryptocoins.domain.model.WhitePaper
+import com.neverland.cryptocoins.DataGenerator.generateParent
+import com.neverland.cryptocoins.DataGenerator.generateParentResponse
+import com.neverland.cryptocoins.data.model.ParentResponse
+import com.neverland.cryptocoins.domain.model.Parent
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class WhitePaperMapperTest {
+class ParentMapperTest {
 
-    private val tested = WhitePaperMapper()
+    private val tested = ParentMapper()
 
     @Test
     fun `mapToDomainModel with correct data should return correct mapped data`() {
         // given
-        val link = "LINK"
-        val thumbnail = "THUMBNAIL"
-        val response = WhitePaperResponse(link = link, thumbnail = thumbnail)
-        val expected = WhitePaper(link = link, thumbnail = thumbnail)
+        val response = generateParentResponse()
+        val expected = generateParent()
 
         // when
         val actual = tested.mapToDomainModel(response = response)
@@ -27,8 +27,8 @@ class WhitePaperMapperTest {
     @Test
     fun `mapToDomainModel with null data should return empty data`() {
         // given
-        val response = WhitePaperResponse()
-        val expected = WhitePaper(link = "", thumbnail = "")
+        val response = ParentResponse()
+        val expected = Parent(id = "", name = "", symbol = "")
 
         // when
         val actual = tested.mapToDomainModel(response = response)
@@ -40,7 +40,7 @@ class WhitePaperMapperTest {
     @Test
     fun `mapToDomainModel with null response should return empty data`() {
         // given
-        val expected = WhitePaper(link = "", thumbnail = "")
+        val expected = Parent(id = "", name = "", symbol = "")
 
         // when
         val actual = tested.mapToDomainModel(response = null)
